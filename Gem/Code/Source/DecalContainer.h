@@ -14,8 +14,8 @@
 
 namespace AtomSampleViewer
 {
-    //! Helper class used by the AtomSampleViewer examples.
-    //! Stores a list of decals and will automatically release them upon destruction of the container.
+    //! AtomSampleViewer 示例使用的辅助类。
+    //! 存储贴花列表，并在容器销毁时自动释放它们。
     class DecalContainer
     {
     public:

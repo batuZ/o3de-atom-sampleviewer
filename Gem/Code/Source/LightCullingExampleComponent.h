@@ -39,6 +39,8 @@ namespace AZ
 
 namespace AtomSampleViewer
 {
+    //! This component creates a simple scene to test light culling with many lights and decals.
+    //! 该组件创建了一个简单的场景，用于测试包含多个灯光和贴花的灯光剔除功能。
     class LightCullingExampleComponent final
         : public CommonSampleComponentBase
         , public AZ::TickBus::Handler

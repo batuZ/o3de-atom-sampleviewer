@@ -29,6 +29,12 @@ namespace AtomSampleViewer
     //! The first (default) pipeline is made of Two Subpasses, Forward followed by SkyBox.
     //! The second pipeline is made of Two Passes, Forward followed by SkyBox.
     //! The user can switch between those two pipelines by using the Keys '1' or '2'.
+    
+    //! 此示例演示如何在 RPI 级别使用子通道。
+    //! 有两个渲染管线，预期输出相同，但它们实现相同结果的方式不同。
+    //! 第一条（默认）管线由两个子通道组成：前向渲染和天空盒渲染。
+    //! 第二条管线由两个通道组成：前向渲染和天空盒渲染。
+    //! 用户可以使用“1”或“2”键在两条管线之间切换。
     class Subpass_RPI_ExampleComponent final
         : public CommonSampleComponentBase
         , public AZ::Render::Bootstrap::DefaultWindowNotificationBus::Handler

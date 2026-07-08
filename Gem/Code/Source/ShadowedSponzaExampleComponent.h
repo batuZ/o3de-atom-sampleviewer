@@ -22,6 +22,7 @@ namespace AtomSampleViewer
 {
     /*
      * This component creates a scene of Sponza with shadowing.
+     * 该组件创建了一个带有阴影效果的 Sponza 场景。
      */
     class ShadowedSponzaExampleComponent final
         : public CommonSampleComponentBase

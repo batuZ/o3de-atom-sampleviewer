@@ -20,11 +20,10 @@
 
 namespace AtomSampleViewer
 {
-    //! This test is for collecting metrics on the shader variant system by allowing users to switch from using
-    //! root shader variant to the optimized variant. To generate shader variants, use the Shader Management Console.
-    //! The shader options used by the material can be verified using the Material Details button in the sidebar.
-    //! FPS and root pass metrics are shown on the sidebar as well. To view metrics for specific passes, use the GPU
-    //! profiler.
+    //! 此测试旨在收集着色器变体系统的指标，允许用户从使用根着色器变体切换到优化变体。
+    //! 要生成着色器变体，请使用着色器管理控制台。
+    //! 可以使用侧边栏中的“材质详情”按钮来验证材质使用的着色器选项。
+    //! 侧边栏还会显示帧率 (FPS) 和根通道指标。要查看特定通道的指标，请使用 GPU 分析器。
     class BakedShaderVariantExampleComponent final
         : public CommonSampleComponentBase
         , public AZ::TickBus::Handler

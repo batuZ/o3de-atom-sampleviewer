@@ -18,6 +18,7 @@
 namespace AtomSampleViewer
 {
     //! Demostrate the effect of Parallax Mapping and Pixel Depth Offset
+    //! 此组件演示视差映射和像素深度偏移的效果
     class ParallaxMappingExampleComponent final
         : public CommonSampleComponentBase
         , public AZ::TickBus::Handler

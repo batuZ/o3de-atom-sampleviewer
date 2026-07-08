@@ -18,7 +18,7 @@ struct ImGuiContext;
 
 namespace AtomSampleViewer
 {
-    //! Common base class for test components that display a lattice of entities.
+    //! 用于显示实体格的测试组件的通用基类。
     class EntityLatticeTestComponent
         : public CommonSampleComponentBase
     {
@@ -33,17 +33,17 @@ namespace AtomSampleViewer
 
     protected:
 
-        //! Returns total number of instances (width * height * depth)
+        //! 返回实例总数（宽度 * 高度 * 深度）
         uint32_t GetInstanceCount() const;
         
-        //! Returns world space Aabb for the lattice.
-        //! The returned Aabb contains all the entity lattice positions. It does not include the mesh Aabb at each position.
+        //! 返回晶格的世界空间 Aabb。
+        //! 返回的 Aabb 包含所有实体晶格位置。它不包含每个位置的网格 Aabb。
         AZ::Aabb GetLatticeAabb() const;
 
-        //! Call this to render ImGui controls for controlling the size of the lattice.
+        //! 调用此函数来渲染 ImGui 控件，以控制晶格的大小。
         void RenderImGuiLatticeControls();
         
-        //! Destroys and rebuilds the lattice.
+        //! 破坏并重建格子。
         virtual void RebuildLattice();
         
         void SetLatticeMaxDimension(uint32_t max);
@@ -55,11 +55,10 @@ namespace AtomSampleViewer
 
     private:
 
-        //! Called once before CreateLatticeInstance() is called for each instance so the subclass can prepare for the total number of instances.
+        //! 在为每个实例调用 CreateLatticeInstance() 之前调用一次，以便子类可以为实例总数做好准备。
         virtual void PrepareCreateLatticeInstances(uint32_t instanceCount) = 0;
 
-        //! This is called for each entity in the lattice when it is being built. The subclass should attach
-        //! whatever components are necessary to achieve the desired result.
+        //! 当构建晶格时，会对晶格中的每个实体调用此方法。子类应附加实现所需结果所需的任何组件。
         virtual void CreateLatticeInstance(const AZ::Transform& transform) = 0;
 
         //! This is called after all the instances are created to any final work. Not required.

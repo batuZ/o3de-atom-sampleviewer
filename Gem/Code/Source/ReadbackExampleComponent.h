@@ -30,6 +30,14 @@ namespace AtomSampleViewer
     //! memory to be used as a texture input in the second pass that will
     //! display it for operator verification.
 
+
+    //! --- 回读测试 ---
+    //!
+    //! 此测试旨在测试 ATOM 的回读功能。
+    //! 它由两个协同工作的自定义流程组成。
+    //! 第一个流程生成纹理并填充图案。
+    //! 然后，它利用 RPI::Pass 的回读功能（ReadbackAttachment）将结果读回主机内存。
+    //! 读回后，结果将上传到设备内存，作为第二个流程的纹理输入，用于显示结果以供操作员验证。
     class ReadbackExampleComponent final
         : public CommonSampleComponentBase
         , public AZ::Render::Bootstrap::DefaultWindowNotificationBus::Handler

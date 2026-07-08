@@ -49,26 +49,26 @@ namespace AtomSampleViewer
         m_sceneName = sceneName;
         m_parent = parent;
 
-        // Create a new EntityContext and AzFramework::Scene, and link them together via SetSceneForEntityContextId
+        // 创建一个新的 EntityContext 和 AzFramework::Scene，并通过 SetSceneForEntityContextId 将它们链接在一起。
         m_entityContext = AZStd::make_unique<AzFramework::EntityContext>();
         m_entityContext->InitContext();
 
-        // Create the scene
-        auto sceneSystem = AzFramework::SceneSystemInterface::Get();
+        // 创建场景
+        AzFramework::ISceneSystem* sceneSystem = AzFramework::SceneSystemInterface::Get();
         AZ_Assert(sceneSystem, "Unable to retrieve scene system.");
         Outcome<AZStd::shared_ptr<AzFramework::Scene>, AZStd::string> createSceneOutcome = sceneSystem->CreateScene(m_sceneName);
         AZ_Assert(createSceneOutcome, "%s", createSceneOutcome.GetError().data());
         m_frameworkScene = createSceneOutcome.TakeValue();
         m_frameworkScene->SetSubsystem<AzFramework::EntityContext::SceneStorageType>(m_entityContext.get());
         
-        // Create a NativeWindow and WindowContext
+        // 创建 NativeWindow 和 WindowContext
         m_nativeWindow = AZStd::make_unique<AzFramework::NativeWindow>("Multi Scene: Second Window", AzFramework::WindowGeometry(0, 0, 1280, 720));
         m_nativeWindow->Activate();
         RHI::Ptr<RHI::Device> device = RHI::RHISystemInterface::Get()->GetDevice();
         m_windowContext = AZStd::make_shared<RPI::WindowContext>();
         m_windowContext->Initialize(*device, m_nativeWindow->GetWindowHandle());
 
-        // Create the RPI::Scene, add some feature processors
+        // 创建 RPI::Scene，并添加一些特征处理器。
         RPI::SceneDescriptor sceneDesc;
         sceneDesc.m_nameId = AZ::Name("SecondScene");
         sceneDesc.m_featureProcessorNames.push_back("AZ::Render::SimplePointLightFeatureProcessor");
@@ -91,7 +91,7 @@ namespace AtomSampleViewer
         // Link our RPI::Scene to the AzFramework::Scene
         m_frameworkScene->SetSubsystem(m_scene);
 
-        // Create a custom pipeline descriptor
+        // 创建自定义管道描述符
         RPI::RenderPipelineDescriptor pipelineDesc;
         pipelineDesc.m_mainViewTagName = "MainCamera";       // Surface shaders render to the "MainCamera" tag
         pipelineDesc.m_name = "SecondPipeline";              // Sets the debug name for this pipeline
@@ -107,7 +107,7 @@ namespace AtomSampleViewer
         m_scene->Activate();
         RPI::RPISystemInterface::Get()->RegisterScene(m_scene);
 
-        // Create a camera entity, hook it up to the RenderPipeline
+        // 创建一个摄像机实体，并将其连接到渲染管线。
         m_cameraEntity = CreateEntity("WindowedSceneCamera", m_entityContext->GetContextId());
         Debug::CameraComponentConfig cameraConfig(m_windowContext);
         cameraConfig.m_fovY = Constants::HalfPi;
@@ -118,11 +118,11 @@ namespace AtomSampleViewer
         m_cameraEntity->Activate();
         m_pipeline->SetDefaultViewFromEntity(m_cameraEntity->GetId());
 
-        // Create a Depth of Field entity
+        // 创建景深实体
         m_depthOfFieldEntity = CreateEntity("DepthOfField", m_entityContext->GetContextId());
         m_depthOfFieldEntity->CreateComponent(azrtti_typeid<AzFramework::TransformComponent>());
 
-        // Get the FeatureProcessors
+        // 获取特征处理器
         m_meshFeatureProcessor = m_scene->GetFeatureProcessor<Render::MeshFeatureProcessorInterface>();
         m_skyBoxFeatureProcessor = m_scene->GetFeatureProcessor<Render::SkyBoxFeatureProcessorInterface>();
         m_pointLightFeatureProcessor = m_scene->GetFeatureProcessor<Render::PointLightFeatureProcessorInterface>();
@@ -131,7 +131,7 @@ namespace AtomSampleViewer
         m_reflectionProbeFeatureProcessor = m_scene->GetFeatureProcessor<Render::ReflectionProbeFeatureProcessorInterface>();
         m_postProcessFeatureProcessor = m_scene->GetFeatureProcessor<Render::PostProcessFeatureProcessorInterface>();
 
-        // Helper function to load meshes
+        // 用于加载网格的辅助函数
         auto LoadMesh = [this](
                             const char* modelPath,
                             const ModelChangedHandler& modelChangedHandler) -> Render::MeshFeatureProcessorInterface::MeshHandle
@@ -149,7 +149,7 @@ namespace AtomSampleViewer
             return meshHandle;
         };
 
-        // Create the ShaderBalls
+        // 创建 ShaderBalls
         {
             m_shaderBallMeshHandles.resize(ShaderBallCount);
             for (uint32_t i = 0u; i < ShaderBallCount; ++i)
@@ -167,7 +167,7 @@ namespace AtomSampleViewer
             }
         }
 
-        // Create the floor
+        // 建造地板
         {
             const Vector3 nonUniformScale{ 24.f, 24.f, 1.0f };
             const Vector3 translation{ 0.f, 0.f, 0.0f };
@@ -176,13 +176,13 @@ namespace AtomSampleViewer
             m_meshFeatureProcessor->SetTransform(m_floorMeshHandle, transform, nonUniformScale);
         }
 
-        // Create the Skybox
+        // 创建天空盒
         {
             m_skyBoxFeatureProcessor->SetSkyboxMode(Render::SkyBoxMode::PhysicalSky);
             m_skyBoxFeatureProcessor->Enable(true);
         }
 
-        // Create PointLight
+        // 创建点光源
         {
             m_pointLightHandle = m_pointLightFeatureProcessor->AcquireLight();
 
@@ -196,7 +196,7 @@ namespace AtomSampleViewer
             m_pointLightFeatureProcessor->SetBulbRadius(m_pointLightHandle, 4.0f);
         }
 
-        // Create DiskLight
+        // 创建 DiskLight
         {
             m_diskLightHandle = m_diskLightFeatureProcessor->AcquireLight();
 
@@ -218,7 +218,7 @@ namespace AtomSampleViewer
             m_diskLightFeatureProcessor->SetConeAngles(m_diskLightHandle, DegToRad(22.5f), DegToRad(27.5f));
         }
 
-        // Create DirectionalLight
+        // 创建定向光
         {
             m_directionalLightHandle = m_directionalLightFeatureProcessor->AcquireLight();
 
@@ -234,7 +234,7 @@ namespace AtomSampleViewer
                     config);
             }
 
-            // Camera Transform
+            // 相机变换
             {
                 Transform transform = Transform::CreateIdentity();
                 TransformBus::EventResult(
@@ -259,7 +259,7 @@ namespace AtomSampleViewer
             m_directionalLightFeatureProcessor->SetCascadeCount(m_directionalLightHandle, 2);
         }
 
-        // Create ReflectionProbe
+        // 创建反射探针
         {
             const Vector3 probePosition{ -5.0f, 0.0f, 1.5f };
             const Transform probeTransform = Transform::CreateTranslation(probePosition);
@@ -267,9 +267,9 @@ namespace AtomSampleViewer
             m_reflectionProbeFeatureProcessor->ShowVisualization(m_reflectionProbeHandle, true);
         }
 
-        // Enable Depth of Field
+        // 启用景深
         {
-            // Setup the depth of field
+            // 设置景深
             auto* postProcessSettings = m_postProcessFeatureProcessor->GetOrCreateSettingsInterface(m_depthOfFieldEntity->GetId());
             m_depthOfFieldSettings = postProcessSettings->GetOrCreateDepthOfFieldSettingsInterface();
             m_depthOfFieldSettings->SetQualityLevel(1u);
@@ -349,8 +349,8 @@ namespace AtomSampleViewer
     {
         using namespace AZ;
 
-        // Move the camera a bit each frame
-        // Note: view space in this scene is right-handed, Z-up, Y-forward
+        // 每帧稍微移动一下摄像机
+        // 注意：此场景的视角空间为右手视角，Z轴向上，Y轴向前。
         const float dynamicOffsetScale = 4.0f;
         if (m_moveCamera)
         {
@@ -403,13 +403,13 @@ namespace AtomSampleViewer
     {
         using namespace AZ;
 
-        // Setup primary camera controls
+        // 设置主相机控制
         Debug::CameraControllerRequestBus::Event(
             GetCameraEntityId(), &Debug::CameraControllerRequestBus::Events::Enable, azrtti_typeid<Debug::NoClipControllerComponent>());
         
         m_defaultIbl.PreloadAssets();
 
-        // preload assets
+        // 预加载资产
         AZStd::vector<AssetCollectionAsyncLoader::AssetToLoadInfo> assetList = {
             { DefaultPbrMaterialPath, azrtti_typeid<RPI::MaterialAsset>() },
             { BunnyModelFilePath, azrtti_typeid<RPI::ModelAsset>() },

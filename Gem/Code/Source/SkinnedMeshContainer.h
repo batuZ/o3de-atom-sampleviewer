@@ -25,6 +25,15 @@ namespace AtomSampleViewer
     //! an arbitrary number of skinned meshes with arbitrary complexity such as vertex count and bone count.
     //! Currently supports 1 lod per skinned mesh, one sub-mesh per lod, and 1-4 influences per vertex.
     //! Currently supports a 1-1 mapping of skinned mesh inputs to skinned mesh instances.
+    
+    //! AtomSampleViewer 示例使用的辅助类。
+    //! 存储蒙皮网格列表，并在容器销毁时自动释放这些网格。
+    //! 蒙皮网格输入缓冲区使用 ProceduralSkinnedMesh 类生成，因此您可以轻松创建任意数量、任意复杂度（例如顶点数和骨骼数）的蒙皮网格。
+    //! 目前支持每个蒙皮网格 1 个 LOD，每个 LOD 1 个子网格，以及每个顶点 1-4 个影响。
+    //! 目前支持蒙皮网格输入与蒙皮网格实例的一对一映射。
+
+    //! The skinned mesh output stream memory is allocated on demand, so if there is not enough memory available
+    //! 蒙皮网格输出流内存是按需分配的，因此如果可用内存不足，则无法使用。
     class SkinnedMeshContainer
         : private AZ::Render::SkinnedMeshOutputStreamNotificationBus::Handler
     {

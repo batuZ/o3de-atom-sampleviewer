@@ -24,6 +24,7 @@ namespace AtomSampleViewer
 {
     //!
     //! This component creates a simple scene that tests raw SSAO output from depth
+    //! 该组件创建了一个简单的场景，用于测试深度信息的原始 SSAO 输出。
     //!
     class SsaoExampleComponent final
         : public CommonSampleComponentBase

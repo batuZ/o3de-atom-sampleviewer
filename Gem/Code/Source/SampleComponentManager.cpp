@@ -68,7 +68,7 @@
 #include <RHI/XRExampleComponent.h>
 #include <RHI/TrianglesConstantBufferExampleComponent.h>
 #include <RHI/BindlessPrototypeExampleComponent.h>
-#include <RHI/RayTracingClusterExampleComponent.h>
+//#include <RHI/RayTracingClusterExampleComponent.h>
 #include <RHI/RayTracingExampleComponent.h>
 #include <RHI/MatrixAlignmentTestExampleComponent.h>
 #include <RHI/VariableRateShadingExampleComponent.h>
@@ -100,7 +100,7 @@
 #include <MultiSceneExampleComponent.h>
 #include <ParallaxMappingExampleComponent.h>
 #include <RayTracingIntersectionShaderExampleComponent.h>
-#include <RayTracingVertexFormatExampleComponent.h>
+//#include <RayTracingVertexFormatExampleComponent.h>
 #include <RenderTargetTextureExampleComponent.h>
 #include <SceneReloadSoakTestComponent.h>
 #include <ShadowExampleComponent.h>
@@ -291,8 +291,8 @@ namespace AtomSampleViewer
             NewRHISample<MultiGPUExampleComponent>("MultiGPU", []() { return AZ::RHI::RHISystemInterface::Get()->GetDeviceCount() >= 2; }),
             NewRHISample<MultiViewportSwapchainComponent>("MultiViewportSwapchainComponent", [] { return IsMultiViewportSwapchainSampleSupported(); }),
             NewRHISample<QueryExampleComponent>("Queries"),
-            NewRHISample<RayTracingClusterExampleComponent>("RayTracingCluster", []() { return Utils::GetRHIDevice()->GetFeatures().m_rayTracingClas; }),
-            NewRHISample<RayTracingExampleComponent>("RayTracing", []() {return Utils::GetRHIDevice()->GetFeatures().m_rayTracing; }),
+            //NewRHISample<RayTracingClusterExampleComponent>("RayTracingCluster", []() { return Utils::GetRHIDevice()->GetFeatures().m_rayTracingClas; }),
+            //NewRHISample<RayTracingExampleComponent>("RayTracing", []() {return Utils::GetRHIDevice()->GetFeatures().m_rayTracing; }),
             NewRHISample<SphericalHarmonicsExampleComponent>("SphericalHarmonics"),
             NewRHISample<StencilExampleComponent>("Stencil"),
             NewRHISample<SubpassExampleComponent>("Subpass", []() { return RHI::RHISystemInterface::Get()->CanMergeSubpasses(); }),
@@ -320,7 +320,7 @@ namespace AtomSampleViewer
             NewRPISample<MultiRenderPipelineExampleComponent>("MultiRenderPipeline"),
             NewRPISample<MultiSceneExampleComponent>("MultiScene"),
             NewRPISample<MultiViewSingleSceneAuxGeomExampleComponent>("MultiViewSingleSceneAuxGeom"),
-            NewRPISample<RayTracingVertexFormatExampleComponent>("RayTracingVertexFormat", []() { return Utils::GetRHIDevice()->GetFeatures().m_rayTracing; }),
+          //  NewRPISample<RayTracingVertexFormatExampleComponent>("RayTracingVertexFormat", []() { return Utils::GetRHIDevice()->GetFeatures().m_rayTracing; }),
             NewRPISample<ReadbackExampleComponent>("Readback"),
             NewRPISample<RenderTargetTextureExampleComponent>("RenderTargetTexture"),
             NewRPISample<RootConstantsExampleComponent>("RootConstants"),
@@ -337,7 +337,7 @@ namespace AtomSampleViewer
             NewFeaturesSample<EyeMaterialExampleComponent>("EyeMaterial"),
             NewFeaturesSample<LightCullingExampleComponent>("LightCulling"),
             NewFeaturesSample<ParallaxMappingExampleComponent>("Parallax"),
-            NewFeaturesSample<RayTracingIntersectionShaderExampleComponent>("RayTracingIntersectionShader", []() { return Utils::GetRHIDevice()->GetFeatures().m_rayTracing; }),
+           // NewFeaturesSample<RayTracingIntersectionShaderExampleComponent>("RayTracingIntersectionShader", []() { return Utils::GetRHIDevice()->GetFeatures().m_rayTracing; }),
             NewFeaturesSample<ShadowExampleComponent>("Shadow"),
             NewFeaturesSample<ShadowedSponzaExampleComponent>("ShadowedSponza"),
             NewFeaturesSample<SkinnedMeshExampleComponent>("SkinnedMesh"),
@@ -348,7 +348,7 @@ namespace AtomSampleViewer
             NewFeaturesSample<TransparencyExampleComponent>("Transparency"),
             NewPerfSample<_100KDrawableExampleComponent>("100KDrawable_SingleView"),
             NewPerfSample<_100KDraw10KDrawableExampleComponent>("100KDraw_10KDrawable_MultiView"),
-            NewPerfSample<RayTracingVertexAnimationExampleComponent>("RayTracingVertexAnimation", []() { return Utils::GetRHIDevice()->GetFeatures().m_rayTracing; }),
+            //NewPerfSample<RayTracingVertexAnimationExampleComponent>("RayTracingVertexAnimation", []() { return Utils::GetRHIDevice()->GetFeatures().m_rayTracing; }),
         };
     }
 

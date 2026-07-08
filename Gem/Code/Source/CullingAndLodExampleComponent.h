@@ -24,6 +24,8 @@
 
 namespace AtomSampleViewer
 {
+    // This component demonstrates culling and LOD with multiple lights and models in a scene.
+    // 该组件演示了场景中多个光源和模型的剔除和 LOD 功能。
     class CullingAndLodExampleComponent final
         : public CommonSampleComponentBase
         , public AZ::TickBus::Handler

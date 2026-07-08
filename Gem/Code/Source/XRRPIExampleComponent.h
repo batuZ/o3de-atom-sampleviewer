@@ -29,6 +29,17 @@ namespace AtomSampleViewer
     //!         Joystick - View Orientation if Trigger button is pressed, otherwise it will use device for view tracking, 
     //!         Button B - Iterate through lighting preset, Button B - Iterate through ground plane material, Squeeze - Scales Controller model     
     //!
+   
+    //!
+
+    //! 此组件创建一个简单的场景，使用特殊的多视图 VR 管线测试 VR。我们设置了两条管线，每只眼睛一条，并且此管线使用立体视图。
+    //! 此示例支持使用 Quest 2 控制器在场景中飞行。它还支持使用按钮按下来实现场景中的特定功能。每个控制器的示意图如下：
+    //! 左侧控制器
+    //!     摇杆 - 相机移动，X 按钮 - 相机上移（视图空间 Y 轴），Y 按钮 - 相机下移（视图空间 Y 轴），捏合 - 缩放控制器模型
+    //! 右侧控制器
+    //!     摇杆 - 如果按下扳机按钮，则调整视图方向；否则，将使用设备进行视图跟踪
+    //! B 按钮 - 遍历光照预设，B 按钮 - 遍历地面材质，捏合 - 缩放控制器模型
+    //!
     class XRRPIExampleComponent final
         : public CommonSampleComponentBase
         , public AZ::TickBus::Handler

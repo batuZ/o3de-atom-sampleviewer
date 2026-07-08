@@ -19,6 +19,8 @@ namespace AtomSampleViewer
 {
     //! This test loads a configurable lattice of entities, gives them all a unique Material instance, and
     //! changes a material property value every frame. UI to configure the size of the lattice is included.
+    //! 此测试加载一个可配置的实体网格，为每个实体赋予一个唯一的材质实例，并在每一帧更改材质属性值。
+    //! 测试中包含用于配置网格大小的用户界面。
     class DynamicMaterialTestComponent final
         : public EntityLatticeTestComponent
         , public AZ::TickBus::Handler

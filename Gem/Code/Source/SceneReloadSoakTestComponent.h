@@ -19,6 +19,9 @@ namespace AtomSampleViewer
     //! the specific goal of exposing race conditions in the renderer and the asset system. Some of the 
     //! intervals are intentionally too short, such that assets and instances will be shut down and released
     //! before they are fully loaded, initialized, and sent to the GPU.
+
+    //! 此测试会以不同的时间间隔反复加载和卸载一组模型和材质，其具体目的是暴露渲染器和资源系统中的竞争条件。
+    //!某些时间间隔故意设置得过短，以便资源和实例在完全加载、初始化并发送到 GPU 之前就被关闭和释放。
     class SceneReloadSoakTestComponent final
         : public EntityLatticeTestComponent
         , public AZ::TickBus::Handler

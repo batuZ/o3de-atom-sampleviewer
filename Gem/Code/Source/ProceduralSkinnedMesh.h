@@ -26,6 +26,10 @@ namespace AtomSampleViewer
 
     //! Class for creating SkinnedMeshInputBuffers with arbitrary bone/vertex counts
     //! Assumes z-up right handed coordinate system
+    //! 用于创建具有任意骨骼/顶点数量的蒙皮网格输入缓冲区的类。假定采用 z 轴向上的右手坐标系。
+    
+    //! The mesh is a vertical cylinder made of segments, with bones spaced evenly along the height of the cylinder.
+    //! 该网格是由多个部分组成的垂直圆柱体，骨骼沿圆柱体的高度均匀分布。
     class ProceduralSkinnedMesh
     {
     public:

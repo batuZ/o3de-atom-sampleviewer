@@ -37,6 +37,12 @@ namespace AtomSampleViewer
     //! It uses root constants to update the object's matrix and an index to a material array.
     //! A "material" in this example is just a simple structure with a color.
     //! There's no SRG updates after initialization.
+    
+    //! 此示例演示了根常量的用法。
+    //! 它使用根常量来更新对象的矩阵和材质数组的索引。
+    //! 在此示例中，“材质”只是一个带有颜色的简单结构。
+    //! 初始化后不会进行 SRG 更新。
+    //! Root Constants = 直接把一小段常量数据“塞进”GPU 命令里，不走 Buffer / SRG 绑定，延迟和开销最低。
     class RootConstantsExampleComponent final
         : public CommonSampleComponentBase
         , public AZ::TickBus::Handler

@@ -21,7 +21,8 @@
 namespace AtomSampleViewer
 {
     /*
-    * This component creates a simple scene to Depth of Field.
+     * This component creates a simple scene to Depth of Field.
+     * 该组件创建一个简单的景深场景。
     */
     class DepthOfFieldExampleComponent final
         : public CommonSampleComponentBase

@@ -29,7 +29,7 @@
 
 namespace AtomSampleViewer
 {
-    //! This component reuses the scene of tonemapping example to demonstrate the bloom feature
+    //! 该组件重用了色调映射示例的场景来演示光晕功能。
     class BloomExampleComponent final
         : public CommonSampleComponentBase
         , public AZ::TickBus::Handler

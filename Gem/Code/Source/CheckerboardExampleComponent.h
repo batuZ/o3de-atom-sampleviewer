@@ -25,7 +25,7 @@
 
 namespace AtomSampleViewer
 {
-    // This component renders a model with pbr material using checkerboard render pipeline.
+    // 该组件使用棋盘渲染管线渲染具有 PBR 材质的模型。
     class CheckerboardExampleComponent final
         : public CommonSampleComponentBase
         , public AZ::Render::Bootstrap::DefaultWindowNotificationBus::Handler

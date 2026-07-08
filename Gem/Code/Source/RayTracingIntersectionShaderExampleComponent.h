@@ -20,6 +20,13 @@ namespace AtomSampleViewer
     //!  - A SpecularReflections level component with "Ray tracing" reflection method
     //! The DebugDraw gem supplies the intersection shaders for the sphere and box shapes and adds them to the ray tracing scene. The shapes
     //! are therefore visible as ray-traced reflections in the mirror plane.
+    
+    //! 此测试通过生成以下场景来检查程序几何体的光线追踪相交着色器的功能：
+    //! - 一个带有镜面材质的水平面
+    //! - 若干个球体和立方体（来自 DebugDraw gem），并启用了光线追踪设置
+    //! - 一个带有“光线追踪”反射方法的 SpecularReflections 组件
+    //! DebugDraw gem 为球体和立方体提供了相交着色器，并将它们添加到光线追踪场景中。
+    //! 因此，这些形状在镜面平面上会显示为光线追踪反射。
     class RayTracingIntersectionShaderExampleComponent final : public CommonSampleComponentBase
     {
     public:

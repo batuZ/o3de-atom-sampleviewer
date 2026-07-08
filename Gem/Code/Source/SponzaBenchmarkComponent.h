@@ -26,6 +26,8 @@ struct ImGuiContext;
 
 namespace AtomSampleViewer
 {
+    // This component runs a loading and runtime benchmark on the Sponza scene.
+    // 该组件对 Sponza 场景运行加载和运行时基准测试。
     class SponzaBenchmarkComponent final
         : public CommonSampleComponentBase
         , public AZ::TickBus::Handler

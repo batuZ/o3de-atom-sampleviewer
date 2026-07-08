@@ -22,7 +22,12 @@ namespace AtomSampleViewer
 {
     //!
     //! This component creates a simple scene that tests the MSAA pipeline. It can test both MSAA enabled and disabled with the same scene
-    //!
+    //!此组件创建一个简单的场景来测试 MSAA 管线。它可以在同一个场景中测试启用和禁用 MSAA 的情况。
+    
+    //! The user can switch between MSAA 2x/4x/8x and non-MSAA modes at runtime via the ImGui sidebar.
+    //! 用户可以通过 ImGui 侧边栏在运行时切换 MSAA 2x/4x/8x 和非 MSAA 模式。
+    //! 
+    //! MSAA 多重采样抗锯齿
     class MSAA_RPI_ExampleComponent final
         : public CommonSampleComponentBase
         , public AZ::Render::Bootstrap::DefaultWindowNotificationBus::Handler

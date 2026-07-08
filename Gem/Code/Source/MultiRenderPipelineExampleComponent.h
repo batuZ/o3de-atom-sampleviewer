@@ -35,6 +35,9 @@ namespace AtomSampleViewer
     //! A sample component which render the same scene with different render pipelines in different windows
     //! It has a imgui menu to switch on/off the second render pipeline as well as turn on/off different graphics features
     //! There is also an option to have the second render pipeline to use the second camera. 
+    //! 一个示例组件，它使用不同的渲染管线在不同的窗口中渲染同一场景。
+    //! 它有一个 imgui 菜单，用于打开/关闭第二个渲染管线以及打开/关闭不同的图形功能。
+    //! 还有一个选项可以让第二个渲染管线使用第二个摄像机。
     class MultiRenderPipelineExampleComponent final
         : public CommonSampleComponentBase
         , public AZ::TickBus::Handler

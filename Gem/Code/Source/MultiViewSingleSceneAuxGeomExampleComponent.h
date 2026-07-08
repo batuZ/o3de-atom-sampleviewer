@@ -25,6 +25,7 @@ namespace AtomSampleViewer
 {
     
     //! A sample component to demonstrate multiple scenes.
+    //! 多视图单场景辅助几何示例组件。
     class MultiViewSingleSceneAuxGeomExampleComponent final
         : public CommonSampleComponentBase
         , public AZ::TickBus::Handler

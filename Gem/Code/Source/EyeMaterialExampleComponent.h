@@ -18,7 +18,8 @@
 
 namespace AtomSampleViewer
 {
-    //! Test sample for the Eye material type
+    //! This sample demonstrates how to set up and manipulate an eye material with subsurface scattering.
+    //! 该示例演示了如何设置和操作具有次表面散射的眼睛材料。
     class EyeMaterialExampleComponent final
         : public CommonSampleComponentBase
         , public AZ::TickBus::Handler

@@ -30,6 +30,9 @@ namespace AtomSampleViewer
 {
     //! This component creates a simple scene to demonstrate the tonemapping feature by displaying a fullscreen image.
     //! The output from the DisplayMapper pass can also be captured to image.
+
+    //! 此组件创建一个简单的场景，通过显示全屏图像来演示色调映射功能。
+    //! DisplayMapper 通道的输出也可以捕获为图像。
     class TonemappingExampleComponent final
         : public CommonSampleComponentBase
         , public AZ::TickBus::Handler

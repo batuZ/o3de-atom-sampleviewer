@@ -15,6 +15,8 @@
 namespace AtomSampleViewer
 {
     //! Depth sort testing for Transparency object
+    
+    //! 透明度对象的深度排序测试
     class TransparencyExampleComponent final
         : public CommonSampleComponentBase
         , public AZ::TickBus::Handler

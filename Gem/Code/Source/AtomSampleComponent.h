@@ -21,15 +21,15 @@ namespace AtomSampleViewer
         AtomSampleComponent() = default;
         ~AtomSampleComponent() override = default;
 
-        // Redefine this string in the sample component subclass to provide a sample-specific warning message.
-        // Any non-empty string will automatically cause a warning message to be displayed before opening the sample.
+        // 在示例组件子类中重新定义此字符串，以提供特定于示例的警告消息。
+        // 任何非空字符串都会在打开示例之前自动显示警告消息。
         static constexpr const char* ContentWarning = "";
 
-        // If the above ContentWarning is overridden with a non-empty value, this string will be used as the message box's title.
-        // Redefine this string in the sample component subclass to provide a custom title.
+        // 如果上述 ContentWarning 被重写并赋予非空值，则此字符串将用作消息框的标题。
+        // 在示例组件子类中重新定义此字符串以提供自定义标题。
         static constexpr const char* ContentWarningTitle = "Content Warning";
         
-        // This is a common photosensitive/seizure warning that could be used for the above ContentWarning in specific samples as needed.
+        // 这是常见的photosensitive/seizure警告，可以根据需要在特定示例中用于上述 ContentWarning。
         static constexpr const char CommonPhotosensitiveWarning[] = "This sample includes flashing images that could cause seizures or other adverse effects in photosensitive individuals.";
         static constexpr const char CommonPhotosensitiveWarningTitle[] = "Photosensitive Seizure Warning";
     };

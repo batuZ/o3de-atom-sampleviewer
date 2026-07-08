@@ -40,7 +40,12 @@ if(NOT PROJECT_NAME)
         LANGUAGES C CXX
         VERSION 1.0.0.0
     )
+    if (MSVC)
+        add_compile_options(/WX-)
+        add_compile_options(/utf-8)
+    endif()
     include(${engine_finder_cmake_path} OPTIONAL)
     find_package(o3de REQUIRED)
+
     o3de_initialize()
 endif()

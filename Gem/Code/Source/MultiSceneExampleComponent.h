@@ -31,6 +31,8 @@ struct ImGuiContext;
 
 namespace AtomSampleViewer
 {
+    //! This class creates a second windowed scene.
+    //! 这个类会创建一个第二个窗口场景。
     class SecondWindowedScene 
         : public AZ::TickBus::Handler
         , public AzFramework::WindowNotificationBus::Handler

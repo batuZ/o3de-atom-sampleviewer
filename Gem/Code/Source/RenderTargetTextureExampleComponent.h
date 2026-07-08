@@ -29,6 +29,12 @@ namespace AtomSampleViewer
     // 1. creates a raster pass at runtime with one render target 
     // 2. the render target is used as a texture input for a standard pbr material
     // 3. A mesh with this material is rendered to the scene with IBL lighting. 
+    
+    // 此示例演示如何将渲染目标用作网格材质的纹理。
+    // 它执行以下操作：
+    // 1. 在运行时创建一个包含一个渲染目标的栅格通道
+    // 2. 将渲染目标用作标准 PBR 材质的纹理输入
+    // 3. 使用 IBL 照明将此材质的网格渲染到场景中。
     class RenderTargetTextureExampleComponent final
         : public CommonSampleComponentBase
         , public AZ::TickBus::Handler

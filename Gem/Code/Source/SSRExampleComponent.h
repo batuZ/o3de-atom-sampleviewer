@@ -20,6 +20,7 @@ namespace AtomSampleViewer
 {
     //!
     //! This component creates a simple scene that tests Screen Space Reflections.
+    //! 该组件创建一个简单的场景来测试屏幕空间反射。
     //!
     class SSRExampleComponent final
         : public CommonSampleComponentBase

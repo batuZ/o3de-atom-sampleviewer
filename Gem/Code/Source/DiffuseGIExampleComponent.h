@@ -25,6 +25,7 @@
 namespace AtomSampleViewer
 {
     //! This sample demonstrates diffuse global illumination using the DiffuseProbeGrid.
+    //! 该示例演示了使用 DiffuseProbeGrid 的漫反射全局光照。
     class DiffuseGIExampleComponent final
         : public CommonSampleComponentBase
         , public AZ::TickBus::Handler

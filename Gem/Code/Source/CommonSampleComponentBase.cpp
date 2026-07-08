@@ -285,7 +285,7 @@ namespace AtomSampleViewer
     {
         m_isAllAssetsReady = false;
 
-        // Configure the imgui progress list widget.
+        // 配置 imgui 进度列表控件。
         auto onUserCancelledAction = [&]()
         {
             AZ_TracePrintf(m_sampleName.c_str() , "Cancelled by user.\n");

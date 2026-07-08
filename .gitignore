@@ -9,3 +9,4 @@ AssetProcessorTemp/**
 [Uu]ser/
 .DS_Store
 CMakeUserPresets.json
+.codegraph

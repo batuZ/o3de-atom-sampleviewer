@@ -16,14 +16,13 @@
 namespace AtomSampleViewer
 {
     /*
-        This test loads a configurable lattice of entities and swaps out each entity's model and material
-        at given time steps. Each entity can have its assets swapped very rapidly (10ths of seconds).
+        此测试加载一个可配置的实体网格，并在给定的时间步长内替换每个实体的模型和材质。每个实体的资源都可以快速替换（十分之一秒）。
 
-        The assets that are applied to the entities are chosen from a configurable 
-        "allow-list" of models and materials. The allow-list is saved to the cache's user folder and 
-        loaded on startup. This makes it easy to chose "working" assets to use in the test vs more development 
-        assets that may not be working properly. It also allows you to build cases where we want
-        to test instancing more than loading. UI to modify allow-list is a core part of this component.
+        应用于实体的资源选自一个可配置的模型和材质“允许列表”。
+        允许列表保存在缓存的用户文件夹中，并在启动时加载。
+        这使得在测试中可以轻松选择“可用”的资源，而不是可能存在问题的开发资源。
+        此外，它还允许您构建一些需要测试实例化而非加载的用例。
+        用于修改允许列表的用户界面是此组件的核心部分。
     */
     class AssetLoadTestComponent final
         : public EntityLatticeTestComponent

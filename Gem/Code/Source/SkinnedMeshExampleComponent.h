@@ -36,6 +36,7 @@ namespace AtomSampleViewer
     class ProceduralSkinnedMesh;
 
     //! This component creates a simple scene to test Atom's SkinnedMesh system.
+    //! 该组件创建了一个简单的场景来测试 Atom 的 SkinnedMesh 系统。
     class SkinnedMeshExampleComponent final
         : public CommonSampleComponentBase
         , private AZ::TickBus::Handler

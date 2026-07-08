@@ -25,6 +25,8 @@
 
 namespace AtomSampleViewer
 {
+    //! This sample component demonstrates how to load and display a 3D model with different materials,
+    //! 此示例组件演示了如何加载和显示具有不同材质的 3D 模型。
     class MeshExampleComponent final
         : public CommonSampleComponentBase
         , public AZ::Render::Bootstrap::DefaultWindowNotificationBus::Handler

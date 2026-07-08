@@ -29,6 +29,13 @@ namespace AtomSampleViewer
     * At the 4th step, we implement softening shadow edge by PCF (Percentage Closer Filtering).
     * At the 5th step, we implement softening shadow edge by ESM (Exponential Shadow Maps).
     * At the 6th step, we implement disk light shadows.
+    * 
+    * 此组件创建了一个简单的场景来测试阴影。
+    * 在第二步中，我们为平行光实现了级联阴影贴图。
+    * 在第三步中，我们使级联层数可配置。
+    * 在第四步中，我们使用 PCF（百分比接近滤波）实现了阴影边缘柔化。
+    * 在第五步中，我们使用 ESM（指数阴影贴图）实现了阴影边缘柔化。
+    * 在第六步中，我们实现了圆盘光阴影。
     */
     class ShadowExampleComponent final
         : public CommonSampleComponentBase

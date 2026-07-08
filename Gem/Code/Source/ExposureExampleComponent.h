@@ -23,6 +23,7 @@ namespace AtomSampleViewer
 {
     /*
     * This component creates a simple scene to demonstrate the exposure feature.
+    * 该组件创建了一个简单的场景来演示曝光功能。
     */
     class ExposureExampleComponent final
         : public CommonSampleComponentBase

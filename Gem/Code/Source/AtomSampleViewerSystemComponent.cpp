@@ -167,8 +167,8 @@ namespace AtomSampleViewer
     {
         system.GetIConsole()->GetCVar("sys_asserts")->Set(2);
 
-        // Currently CSystem::Init hides and constrains the mouse cursor.
-        // For AtomSampleViewer we want it visible so that we can use the ImGui menus
+        // 目前 CSystem::Init 会隐藏并限制鼠标光标。
+        // 对于 AtomSampleViewer，我们希望它可见，以便可以使用 ImGui 菜单。
         AzFramework::InputSystemCursorRequestBus::Event(AzFramework::InputDeviceMouse::Id,
                                                         &AzFramework::InputSystemCursorRequests::SetSystemCursorState,
                                                         AzFramework::SystemCursorState::UnconstrainedAndVisible);

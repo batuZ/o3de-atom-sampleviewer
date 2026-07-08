@@ -26,6 +26,7 @@
 namespace AtomSampleViewer
 {
     //! Provides a basic example for how to use DynamicDrawInterface and DynamicDrawContext
+    //! 提供了一个使用 DynamicDrawInterface 和 DynamicDrawContext 的基本示例。
     class DynamicDrawExampleComponent final
         : public CommonSampleComponentBase
         , public AZ::TickBus::Handler

@@ -38,6 +38,16 @@ namespace AtomSampleViewer
     // The file will be loaded and displayed on the top right side of screen. 
     // A switch button under it will overwrite the image with another one. When the changed image got processed by AP, 
     // the new content will be rendered on the screen. 
+    
+    // 此 AtomSampleViewer 示例用于测试、分析和可视化 StreamingImage 流式传输过程，以及测试 StreamingImage 的热重载功能。
+    // 它首先加载 36 个 StreamingImageAssets，并在每个资源准备就绪后创建相应的 StreamingImage。
+    // StreamingImage 创建完成后，将使用其所有 mipmap 将其绘制到屏幕上。
+    // 未加载的 mipmap 将显示为白色方块。
+    // 当所有 StreamingImage 的 mipmap 都加载完毕后，屏幕上将显示性能分析结果。
+    // 为了测试 StreamingImage 的热重载，此示例将在 AtomSampleViewer 项目资源的 texture/streaming/ 文件夹中添加一个新的图像文件。
+    // 该文件将被加载并显示在屏幕右上角。
+    // 其下方有一个切换按钮，用于将当前图像覆盖为另一个图像。
+    // 当 AP 处理更改后的图像后，新的内容将渲染到屏幕上。
     class StreamingImageExampleComponent final
         : public CommonSampleComponentBase
         , public AZ::Data::AssetBus::MultiHandler

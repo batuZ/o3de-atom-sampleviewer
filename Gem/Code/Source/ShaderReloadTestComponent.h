@@ -27,6 +27,8 @@ namespace AtomSampleViewer
     // This example component updates (upon user, or script input) the shader that is being used
     // to render a FullscreenTrianglePass, with the purpose on validating that the
     // shader reload notification events work properly.
+    
+    // 此示例组件会根据用户或脚本输入更新用于渲染 FullscreenTrianglePass 的着色器，目的是验证着色器重新加载通知事件是否正常工作。
     class ShaderReloadTestComponent final
         : public AtomSampleComponent
         , public AZ::Render::Bootstrap::DefaultWindowNotificationBus::Handler

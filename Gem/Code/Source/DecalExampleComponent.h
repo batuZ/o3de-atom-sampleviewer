@@ -25,6 +25,7 @@ namespace AtomSampleViewer
     class DecalContainer;
 
     //! This component creates a simple scene to test Atom's decal system.
+    //! 该组件创建了一个简单的场景来测试 Atom 的贴花系统。
     class DecalExampleComponent final
         : public CommonSampleComponentBase
         , public AZ::TickBus::Handler
